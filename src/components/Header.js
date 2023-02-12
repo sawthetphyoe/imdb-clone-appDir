@@ -11,7 +11,7 @@ export default function Header() {
         <MenuItem title="Home" address="/" Icon={AiFillHome} />
         <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill} />
       </div>
-      <div className="flex items-center space-x-5 mx-4 lg:mx-6">
+      <div className="flex items-center space-x-7">
         <DarkModeSwitch />
         <Link href="/">
           <h2>

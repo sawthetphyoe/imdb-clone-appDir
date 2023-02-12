@@ -1,7 +1,7 @@
 "use client";
 
-import { MdLightMode } from "react-icons/md";
-import { BsFillMoonFill } from "react-icons/bs";
+import { MdLightMode as LightIcon } from "react-icons/md";
+import { BsFillMoonFill as DarkIcon } from "react-icons/bs";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -16,12 +16,12 @@ export default function DarkModeSwitch() {
     <>
       {mounted &&
         (currentTheme === "dark" ? (
-          <MdLightMode
+          <LightIcon
             className="transition duration-200 text-xl cursor-pointer hover:text-amber-500"
             onClick={() => setTheme("light")}
           />
         ) : (
-          <BsFillMoonFill
+          <DarkIcon
             className="transition duration-200 text-xl cursor-pointer hover:text-amber-500"
             onClick={() => setTheme("dark")}
           />
