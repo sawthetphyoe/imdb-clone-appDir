@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="max-w-7xl mx-auto mt-4 space-y-6">
+    <div className="max-w-7xl mx-auto mt-4 space-y-6 px-4 sm:px-8">
       <h1 className="text-2xl font-medium text-amber-600">About IMDb Clone</h1>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
