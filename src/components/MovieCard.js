@@ -6,18 +6,31 @@ export default function MovieCard({ data }) {
   return (
     <div className="cursor-pointer p-3 sm:hover:shadow-slate-500 sm:shadow-md rounded-lg border border-slate-400 transition-shadow duration-200 group my-6 sm:my-0">
       <Link href={`/movie/${data.id}`}>
-        <Image
-          src={`https://image.tmdb.org/t/p/original/${
-            data.backdrop_path || data.poster_path
-          }`}
-          alt={data.title || data.name}
-          width={500}
-          height={300}
-          style={{ maxWidth: "100%", height: "auto" }}
-          className="sm:rounded-t-md group-hover:opacity-70 transition-opacity duration-200"
-          placeholder="blur"
-          blurDataURL="/spinner.svg"
-        />
+        {data.backdrop_path || data.poster_path ? (
+          <Image
+            src={`https://image.tmdb.org/t/p/original/${
+              data.backdrop_path || data.poster_path
+            }`}
+            alt={data.title || data.name}
+            width={500}
+            height={300}
+            style={{ width: "auto", height: "auto" }}
+            className="sm:rounded-t-md group-hover:opacity-70 transition-opacity duration-200"
+            placeholder="blur"
+            blurDataURL="/spinner.svg"
+          />
+        ) : (
+          <Image
+            src="/image_placeholder.png"
+            alt={data.title || data.name}
+            width={500}
+            height={300}
+            style={{ width: "auto", height: "auto" }}
+            className="sm:rounded-t-md group-hover:opacity-70 transition-opacity duration-200"
+            placeholder="blur"
+            blurDataURL="/spinner.svg"
+          />
+        )}
         <div className="p-2">
           <p className="line-clamp-3 mb-2">{data.overview}</p>
           <h2 className="truncate text-lg font-bold mb-1">
