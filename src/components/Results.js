@@ -1,8 +1,10 @@
+import MovieCard from "./MovieCard";
+
 export default function Results({ results }) {
   return (
-    <div>
+    <div className="sm:gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-7xl mx-auto py-4 px-4 sm:px-8">
       {results.map((result) => (
-        <div key={result.id}>{result.original_title}</div>
+        <MovieCard key={result.id} data={result} />
       ))}
     </div>
   );
