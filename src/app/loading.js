@@ -9,6 +9,7 @@ export default function Loading() {
         height={300}
         src="spinner.svg"
         alt="loading..."
+        style={{ height: "auto" }}
       />
     </div>
   );
