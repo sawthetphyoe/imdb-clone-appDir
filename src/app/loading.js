@@ -10,6 +10,7 @@ export default function Loading() {
         src="spinner.svg"
         alt="loading..."
         style={{ height: "auto" }}
+        priority
       />
     </div>
   );

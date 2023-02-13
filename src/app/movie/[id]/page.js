@@ -11,19 +11,32 @@ export default async function MoviePage({ params }) {
   const movie = await getMovie(params.id);
   return (
     <div className="w-full">
-      <div className="p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-7xl mx-auto md:space-x-6">
-        <Image
-          src={`https://image.tmdb.org/t/p/original/${
-            movie.backdrop_path || movie.poster_path
-          }`}
-          alt={movie.title || movie.name}
-          width={500}
-          height={300}
-          style={{ maxWidth: "100%", height: "auto" }}
-          className="rounded-lg"
-          placeholder="blur"
-          blurDataURL="/spinner.svg"
-        />
+      <div className="p-4 md:pt-8 flex flex-col md:flex-row items-start content-center max-w-7xl mx-auto md:space-x-6">
+        {movie.backdrop_path || movie.poster_path ? (
+          <Image
+            src={`https://image.tmdb.org/t/p/original/${
+              movie.backdrop_path || movie.poster_path
+            }`}
+            alt={movie.title || movie.name}
+            width={500}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
+            className="rounded-lg mt-4"
+            placeholder="blur"
+            blurDataURL="/spinner.svg"
+          />
+        ) : (
+          <Image
+            src="/image_placeholder.png"
+            alt={movie.title || movie.name}
+            width={500}
+            height={300}
+            style={{ maxWidth: "100%", height: "auto" }}
+            className="rounded-lg mt-4"
+            placeholder="blur"
+            blurDataURL="/spinner.svg"
+          />
+        )}
         <div className="p-2">
           <h2 className="text-2xl mb-3 font-bold">
             {movie.title || movie.name}
