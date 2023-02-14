@@ -7,7 +7,7 @@ async function fetchData(genre) {
     genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
   }?api_key=${API_KEY}&language=en-US&page=1`;
 
-  const res = await fetch(url, { next: { revalidate: 10000 } });
+  const res = await fetch(url, { cache: "no-store" });
 
   return res.json();
 }
