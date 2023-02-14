@@ -2,13 +2,13 @@ import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import SearchBox from "@/components/SearchBox";
 import "./globals.css";
-import Providers from "./Providers";
+import ThemedApp from "./ThemedApp";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>
+        <ThemedApp>
           {/* Header */}
           <Header />
           {/* Navbar */}
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
           {/* SearchBox */}
           <SearchBox />
           {children}
-        </Providers>
+        </ThemedApp>
       </body>
     </html>
   );

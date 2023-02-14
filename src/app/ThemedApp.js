@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 
-export default function Providers({ children }) {
+export default function ThemedApp({ children }) {
   return (
     <ThemeProvider
       enableSystem={true}
